@@ -1,0 +1,48 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,Math, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    ListBox1: TListBox;
+    ListBox2: TListBox;
+    ListBox3: TListBox;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+ var
+ say: Array[0..10] of Integer;
+  x,r: Integer;
+
+begin
+ListBox1.Items.Clear;
+ListBox2.Items.Clear;
+ListBox3.Items.Clear;
+
+for x := 1 to 10 do begin
+
+r:=RandomRange(-100,100);
+  say[x]:=r;
+  ListBox1.Items.Add(IntToStr(say[x]));
+end;
+
+end;
+
+end.
